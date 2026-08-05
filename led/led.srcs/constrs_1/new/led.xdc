@@ -1,0 +1,6 @@
+set_property PACKAGE_PIN B20 [get_ports key]
+set_property PACKAGE_PIN W13 [get_ports led]
+set_property PULLUP true [get_ports key]
+set_property PULLUP true [get_ports led]
+set_property IOSTANDARD LVCMOS33 [get_ports key]
+set_property IOSTANDARD LVCMOS33 [get_ports led]

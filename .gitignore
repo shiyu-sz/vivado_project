@@ -1,0 +1,75 @@
+# Vivado 临时目录
+.Xil/
+*.cache/
+*.runs/
+*.sim/
+*.gen/
+*.hw/
+*.ip_user_files/
+
+# Vivado 日志和临时文件
+*.jou
+*.log
+*.str
+*.pb
+*.dmp
+*.tmp
+*.backup.*
+vivado_pid*.str
+webtalk*.jou
+webtalk*.log
+usage_statistics_webtalk.xml
+usage_statistics_webtalk.html
+
+# 仿真器生成文件
+xsim.dir/
+*.wdb
+*.wcfg
+*.vcd
+*.fst
+
+# 综合/实现生成文件
+*.bit
+*.bin
+*.ltx
+*.mmi
+*.rpt
+*.rpx
+*.dcp
+*.edf
+*.edn
+*.ngc
+*.ncd
+*.bgn
+*.pad
+*.par
+*.unroutes
+*.xpi
+
+# IP 生成文件
+*.veo
+*.vho
+*.xml~
+*.coe~
+*.xci~
+*.xcix~
+
+# 导出的硬件平台
+*.hdf
+*.xsa
+*.sysdef
+
+# SDK / Vitis 工作区
+.sdk/
+*.workspace/
+.metadata/
+RemoteSystemsTempFiles/
+
+# 操作系统和编辑器
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
