@@ -73,3 +73,8 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+
+work
+transcript
+*.wlf
+*.mti
