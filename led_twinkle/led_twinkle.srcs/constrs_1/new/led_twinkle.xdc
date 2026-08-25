@@ -1,0 +1,12 @@
+set_property PACKAGE_PIN N18 [get_ports sys_clk]
+set_property PACKAGE_PIN H16 [get_ports sys_rst_n]
+set_property PACKAGE_PIN W13 [get_ports led]
+set_property IOSTANDARD LVCMOS33 [get_ports led]
+set_property IOSTANDARD LVCMOS33 [get_ports sys_clk]
+set_property IOSTANDARD LVCMOS33 [get_ports sys_rst_n]
+
+create_clock -period 20.000 -name sys_clk -waveform {0.000 10.000} [get_ports sys_clk]
+set_property PULLUP true [get_ports led]
+set_property PULLUP true [get_ports sys_clk]
+set_property PULLUP true [get_ports sys_rst_n]
+set_property DRIVE 12 [get_ports led]
