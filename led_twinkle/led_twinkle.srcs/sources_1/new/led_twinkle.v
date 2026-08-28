@@ -3,8 +3,9 @@
 module led_twinkle(
     input        sys_clk  ,  //系统时钟
     input        sys_rst_n,  //系统复位，低电平有效
-
     output  reg  led         //LED灯
+    //(* mark_debug = "true" *)input        sys_rst_n,  //系统复位，低电平有效
+    //(* mark_debug = "true" *)output  reg  led         //LED灯
 );
 
 //reg define
@@ -35,5 +36,15 @@ always @(posedge sys_clk or negedge sys_rst_n) begin
     else
         led <= led;
 end
+
+/*
+ila_0 your_instance_name (
+	.clk(sys_clk), // input wire clk
+
+
+	.probe0(sys_rst_n), // input wire [0:0]  probe0  
+	.probe1(led) // input wire [0:0]  probe1
+);
+*/
 
 endmodule
