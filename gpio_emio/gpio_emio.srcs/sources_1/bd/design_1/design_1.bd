@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x87EFAFDDE6F2BEC5",
+      "boundary_crc": "0x7D9DFA922D4E0773",
       "device": "xc7z010iclg400-1L",
       "gen_directory": "../../../../gpio_emio.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -199,10 +199,10 @@
             "value": "1"
           },
           "PCW_GPIO_EMIO_GPIO_IO": {
-            "value": "1"
+            "value": "2"
           },
           "PCW_GPIO_EMIO_GPIO_WIDTH": {
-            "value": "1"
+            "value": "2"
           },
           "PCW_GPIO_MIO_GPIO_ENABLE": {
             "value": "1"
