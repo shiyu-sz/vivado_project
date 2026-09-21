@@ -1,0 +1,11 @@
+set_property PACKAGE_PIN F20 [get_ports key]
+set_property PACKAGE_PIN T14 [get_ports key_filter]
+set_property IOSTANDARD LVCMOS33 [get_ports key]
+set_property IOSTANDARD LVCMOS33 [get_ports key_filter]
+set_property IOSTANDARD LVCMOS33 [get_ports sys_clk]
+set_property IOSTANDARD LVCMOS33 [get_ports sys_rst_n]
+
+set_property PACKAGE_PIN F20 [get_ports key_int]
+set_property IOSTANDARD LVCMOS33 [get_ports key_int]
+set_property PACKAGE_PIN T14 [get_ports compare_done]
+set_property IOSTANDARD LVCMOS33 [get_ports compare_done]
