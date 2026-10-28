@@ -136,12 +136,14 @@ VGA常见分辨率：
   `define H_Back_Porch    12'd88
   `define H_Left_Border   12'd0
 
-  `define V_Total_Time    12'd525
-  `define V_Bottom_Border 12'd8
-  `define V_Front_Porch   12'd2
-  `define V_Sync_Time     12'd2
-  `define V_Back_Porch    12'd25
-  `define V_Top_Border    12'd8
+  // Match the working 800x480 mode used by the Vitis project:
+  // V front porch = 1, sync = 3, back porch = 21, total = 505.
+  `define V_Total_Time    12'd505
+  `define V_Bottom_Border 12'd0
+  `define V_Front_Porch   12'd1
+  `define V_Sync_Time     12'd3
+  `define V_Back_Porch    12'd21
+  `define V_Top_Border    12'd0
 
 `elsif Resolution_800x600
   `define H_Total_Time    12'd1056

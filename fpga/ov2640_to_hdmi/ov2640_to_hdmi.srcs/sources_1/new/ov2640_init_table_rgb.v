@@ -34,6 +34,12 @@ module ov2640_init_table_rgb #(
 
   // Declare the ROM variable
   reg [DATA_WIDTH-1:0] rom[2**ADDR_WIDTH-1:0];
+
+  // OV2640 ZMOW/ZMOH encode output dimensions in units of four pixels.
+  // The sensor source window remains SVGA (800x600); the DVP output is sized
+  // to IMAGE_WIDTH x IMAGE_HEIGHT to match the DDR frame buffer.
+  localparam [7:0] ZOOM_OUT_WIDTH  = IMAGE_WIDTH  / 4;
+  localparam [7:0] ZOOM_OUT_HEIGHT = IMAGE_HEIGHT / 4;
  
   	initial begin
                 rom[0] = 16'hff01;
@@ -212,9 +218,8 @@ module ov2640_init_table_rgb #(
     			rom[155] = 16'hb20f;
     			rom[156] = 16'hc45c;
     			//根据分辨率不同而设置
-    			rom[157] = 16'hc064;//图像尺寸设置 //800 = 100(0x64) * 8
-    			//SCCB_Write(= 0x1_4B;//图像尺寸设置 //600 = 75(0x4B) * 8 //3C
-    			rom[158] = 16'hc14B;//图像尺寸设置 //600 = 75(0x4B) * 8 //3C
+			    rom[157] = 16'hc064;// source width: 800 pixels
+			    rom[158] = 16'hc14B;// source height: 600 pixels (SVGA)
     			rom[159] = 16'h8c00;//图像尺寸设置
     			rom[160] = 16'h863D;
     			rom[161] = 16'h5000;
@@ -223,8 +228,8 @@ module ov2640_init_table_rgb #(
     			rom[164] = 16'h5300;//图像窗口设置
     			rom[165] = 16'h5400;//图像窗口设置
     			rom[166] = 16'h5500;//图像窗口设置
-    			rom[167] = 16'h5aC8;
-    			rom[168] = 16'h5b96;
+			    rom[167] = {8'h5a, ZOOM_OUT_WIDTH}; // DVP output width
+			    rom[168] = {8'h5b, ZOOM_OUT_HEIGHT}; // DVP output height
     			rom[169] = 16'h5c00;
     	       //
     			rom[170] = 16'hd382;//auto设置要小心   82
